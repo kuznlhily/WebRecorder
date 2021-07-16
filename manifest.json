@@ -1,0 +1,37 @@
+{
+    "manifest_version":2,
+    "name":"test",
+    "version":"1.0.0",
+    "description":"a plug in",
+    "icons":{
+        "16":"image/01.png",
+        "48": "image/01.png",
+        "128": "image/01.png"
+    },
+
+    "browser_action":{
+        "default_title":"a little plug-in",
+        "default_icon":"image/01.png",
+        "default_popup":"popup/popup.html"
+    },
+    "content_scripts":[
+        {
+            "js":["popup/popup.js"],
+            "matches":["<all_urls>"],
+            "run_at":"document_start"
+        }
+    ],
+    "permission":[
+        "contextMenus",
+        "tabs",
+        "notifications",
+        "webRequest",
+        "webrequestBlocking",
+        "storage",
+        "cookies",
+        "webNavigation",
+        "activeTab",
+        "http://*/*",
+        "https://*/*"
+    ]
+}
